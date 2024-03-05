@@ -1,0 +1,44 @@
+@mixin list-unstyled {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+@mixin flexbox ($direction:column, $justify:space-between, $align:center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin link-unstyled {
+  text-decoration-line: none;
+}
+
+@mixin transition ($property) {
+  transition: $property 0.3s linear;
+}
+
+@mixin header-text-style {
+  font-size: var(--main-header-font-size);
+  font-weight: var(--main-text-font-weight);
+  line-height: var(--main-text-line-height); 
+  color: var(--main-text-color);
+}
+
+@mixin text-style {
+  margin-top: 0;
+  font-size: var(--main-text-font-size);
+  font-weight: var(--main-text-font-weight);
+  line-height: var(--main-text-line-height); 
+  color: var(--main-text-color);
+}
+
+@mixin link-style ($display:inline-block) {
+  display: $display;
+  @include link-unstyled;
+  border-radius: 5px;
+  color: var(--main-footer-text-color);
+  background-color: var(--main-link-background-color);
+}
