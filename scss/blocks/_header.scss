@@ -1,0 +1,120 @@
+@use "../mixin" as *;
+
+.site-header {
+  box-shadow: 0px 4px 20px 0px #0000001a;
+}
+
+.site-header__wrapper {
+  @include flexbox ($direction:null, $justify:null);
+}
+
+.logo {
+  @include link-unstyled;
+  margin-right: auto;
+}
+
+.site-header__nav {
+  margin-right: 8px;
+}
+
+.site-header__list {
+  @include flexbox ($direction:null, $justify:null);
+  @include list-unstyled;
+}
+
+.site-header__item {
+  padding: 16px 16px 13px;
+  border-bottom: 3px solid transparent;
+  @include transition ($property:border-bottom);
+  @include transition ($property:background-color);
+}
+
+.site-header__item:hover {
+  border-bottom: 3px solid #191919;
+}
+
+.site-header__item:active {
+  border-bottom-color: transparent;
+  background-color: #191919b3;
+}
+
+.site-header__item:active .site-header__link {
+  color: var(--main-footer-text-color);
+}
+
+.inner {
+  position: relative;
+}
+
+.inner:hover .inner__list {
+  display: block;
+}
+
+.inner__list {
+  @include list-unstyled;
+  position: absolute;
+  display: none;
+  width: 138px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  top: 56px;
+  left: -13px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 24px 0px #0000001a;
+  background-color: var(--main-footer-text-color);
+}
+
+.inner__item {
+  padding: 8px 16px;
+  @include transition ($property:background-color);
+}
+
+.inner__item:not(:nth-child(2)) {
+  margin-right: 8px;
+} 
+
+.inner__item:hover {
+  background-color: var(--main-link-background-color);
+}
+
+.inner__item:active {
+  opacity: 0.6;
+}
+
+.inner__link {
+  @include link-unstyled;
+  color: var(--main-text-color);
+  font-size: var(--main-text-font-size);
+  font-weight: var(--main-text-font-weight);
+  line-height: var(--main-text-line-height); 
+  @include transition ($property:background-color);
+}
+
+.site-header__link {
+  @include link-unstyled;
+  @include header-text-style;
+}
+
+.site-header__tel-link {
+  @include link-style;
+  padding: 5px 13px;
+  font-size: var(--main-header-font-size);
+  font-weight: var(--main-text-font-weight);
+  line-height: var(--main-text-line-height); 
+  border: 3px solid transparent;
+  @include transition ($property:color);
+  @include transition ($property:background-color);
+  @include transition ($property:border);
+}
+
+.site-header__tel-link:hover {
+  border: 3px solid var(--main-link-background-color);
+  color: var(--main-link-background-color);
+  background-color: var(--main-footer-text-color);
+}
+
+.site-header__tel-link:active {
+  color: var(--main-footer-text-color);
+  background-color: var(--main-link-background-color);
+  opacity: 0.6;
+}

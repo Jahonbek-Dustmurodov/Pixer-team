@@ -1,0 +1,119 @@
+@use "../mixin" as *;
+
+.site-footer {
+  padding-top: 56px;
+  padding-bottom: 56px;
+  background-color: var(--main-text-color);
+}
+
+.site-footer__wrapper {
+  @include flexbox ($direction:null, $justify:null, $align:null);
+}
+
+.site-footer__text-wrapper {
+  width: 320px;
+  margin-right: 100px;
+}
+
+.site-footer__span {
+  display: inline-block;
+  margin-bottom: 16px;
+  font-size: 20px;
+  font-weight: var(--main-title-font-weight);
+  line-height: 26px;
+  color: var(--main-footer-text-color);
+}
+
+.site-footer__text {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: var(--main-text-font-size);
+  font-weight: var(--main-text-font-weight);
+  line-height: var(--main-text-line-height);
+  color: var(--main-footer-text-color);
+}
+
+.site-footer__list-wrapper {
+  margin-right: 87px;
+}
+
+.site-footer__social-wrapper {
+  margin-right: 0;
+}
+
+.site-footer__list-title {
+  display: inline-block;
+  margin-bottom: 16px;
+  font-size: 20px;
+  font-weight: var(--main-title-font-weight);
+  line-height: 26px;
+  color: var(--main-footer-text-color);
+}
+
+.site-footer__list {
+  @include flexbox ($justify:null, $align:null);
+  @include list-unstyled;
+  row-gap: 8px;
+}
+
+.site-footer__link {
+  @include link-unstyled;
+  font-size: var(--main-text-font-size);
+  font-weight: var(--main-text-font-weight);
+  line-height: var(--main-text-line-height);
+  color: var(--main-footer-text-color);
+  @include transition ($property:color);
+}
+
+.site-footer__link:hover {
+  color: var(--main-link-background-color);
+}
+
+.site-footer__link:active {
+  opacity: 0.6;
+}
+
+.social-list__link {
+  @include link-unstyled;
+  font-size: var(--main-text-font-size);
+  font-weight: var(--main-text-font-weight);
+  line-height: var(--main-text-line-height);
+  color: var(--main-footer-text-color);
+  @include transition ($property:color);
+}
+
+.social-list__item {
+  display: flex;
+  align-items: center;
+}
+
+.social-list__item::before {
+  display: inline-block;
+  width: 22px;
+  height: 24px;
+  margin-right: 8px;
+  content: "";
+  background-size: 22px 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.social-list__item:first-child::before {
+  background-image: url("../images/telegram.svg");
+}
+
+.social-list__item:nth-child(2)::before {
+  background-image: url("../images/facebook.svg");
+}
+
+.social-list__item:nth-child(3)::before {
+  background-image: url("../images/instagram.svg");
+}
+
+.social-list__item:active {
+  opacity: 0.6;
+}
+
+.social-list__link:hover {
+  color: var(--main-link-background-color);
+}
