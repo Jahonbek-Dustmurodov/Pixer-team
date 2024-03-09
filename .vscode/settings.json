@@ -4,7 +4,7 @@
     {
       "format": "compressed",
       "extensionName": ".min.css",
-      "savePath": "styles"
+      "savePath": "/styles"
     }
   ],
 
@@ -13,5 +13,5 @@
     ">1%",
     "last 2 version"
   ]
-  
+
 }
